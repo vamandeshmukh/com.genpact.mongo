@@ -1,37 +1,44 @@
 package com.genpact.mongo;
 
-/**
- * Hello world!
+/** 
+ * 
+ * @author Vaman Deshmukh 
  *
  */
 
-@FunctionalInterface
-interface Delete {
-
-	public abstract void m1();
-
-//	public abstract void ma();
-
-	static void m2() {
-
+class Manager {
+	static ClassTwo getClass2() {
+		return new ClassTwo();
 	}
-
-	static void m22() {
-
-	}
-
-	default void m3() {
-
-	}
-
-	default void m4() {
-
-	}
-
 }
+
+
+class ClassOne {
+	int id;
+	ClassTwo classTwo = Manager.getClass2();
+	
+	
+}
+
+class ClassTwo {
+	int id2;
+	
+}
+
+
+
 
 public class App {
 	public static void main(String[] args) {
+		
 		System.out.println("Hello World!");
+		
+		Employee emp = new Employee(101, "Sonu", 10.5);
+		
+		Employee emp2 = emp;
+		
+		System.out.println(emp.toString());
+		
+		
 	}
 }

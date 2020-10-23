@@ -17,7 +17,7 @@ public class RetrieveDocs {
 
 	public static void main(String[] args) {
 
-		// connect to mongodb
+		// connect to mongodb 
 		MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
 		MongoDatabase genpact = mongoClient.getDatabase("genpact");
 		MongoCollection<Document> posts = genpact.getCollection("posts");

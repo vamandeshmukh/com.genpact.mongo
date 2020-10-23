@@ -21,14 +21,15 @@ public class UpdateDocs {
 		MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
 		MongoDatabase genpact = mongoClient.getDatabase("genpact");
 		MongoCollection<Document> posts = genpact.getCollection("posts");
-		UpdateDocs.updateOneDoc(posts);
-		UpdateDocs.updateManyDocs(posts, 15);
+		UpdateDocs.updateOneDoc(posts, 15);
+		UpdateDocs.updateManyDocs(posts, 14);
+		
 	}
 
 	// update one document
-	private static UpdateResult updateOneDoc(MongoCollection<Document> posts) {
-		Bson filter = eq("userId", 230);
-		Bson updateOperation = set("title", "another title");
+	public static UpdateResult updateOneDoc(MongoCollection<Document> posts, int userId) {
+		Bson filter = eq("userId", userId);
+		Bson updateOperation = set("title", "another title eeeeeeeeeeeeeee");
 		UpdateResult updateResult = posts.updateOne(filter, updateOperation);
 		System.out.println(updateResult);
 		return updateResult;
@@ -37,7 +38,7 @@ public class UpdateDocs {
 	// update many docs
 	private static UpdateResult updateManyDocs(MongoCollection<Document> posts, int userId) {
 		Bson filter = eq("userId", userId);
-		Bson updateOperation = set("title", "another title");
+		Bson updateOperation = set("title", "another title aaaaaaaaaaaaa");
 		UpdateResult updateResult = posts.updateMany(filter, updateOperation);
 		System.out.println(updateResult);
 		return updateResult;

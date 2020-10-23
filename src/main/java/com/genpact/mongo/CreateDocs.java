@@ -3,6 +3,7 @@ package com.genpact.mongo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 import org.bson.Document;
 
@@ -26,7 +27,7 @@ public class CreateDocs {
 		// add one
 		CreateDocs.insertOneDoc(posts);
 		// add many
-		CreateDocs.insertManyDocs(posts, 10);
+//		CreateDocs.insertManyDocs(posts, 50);
 		System.out.println("End");
 	}
 
@@ -45,7 +46,12 @@ public class CreateDocs {
 	private static Document createPost() {
 		int temp = random.nextInt(100), temp2 = temp * 10;
 		String temp3 = "post" + Integer.toString(temp), temp4 = temp3 + Integer.toString(temp2);
-		Document doc = new Document("userId", temp).append("id", temp2).append("title", temp3).append("body", temp4);
-		return doc;
+		System.out.println("Enter");
+		Scanner sc = new Scanner(System.in);
+		Document doc2 = new Document("id", sc.nextInt()).append("name", sc.next()).append("salary", sc.nextDouble());
+		
+//		Document doc = new Document("userId", temp).append("id", temp2).append("title", temp3).append("body", temp4);
+		
+		return doc2;
 	}
 }

@@ -25,17 +25,17 @@ public class DeleteDocs {
 		System.out.println("Start");
 
 		// delete one document
-		Bson filter = eq("userId", 43);
+		Bson filter = eq("userId", 78846548);
 		DeleteResult result = posts.deleteOne(filter);
 		System.out.println(result);
 
-		// findOneAndDelete operation
-		filter = eq("userId", 57);
+		// formatting result 
+		filter = eq("userId", -86587);
 		Document doc = posts.findOneAndDelete(filter);
 		System.out.println(doc.toJson(JsonWriterSettings.builder().indent(true).build()));
 
 		// delete many documents
-		filter = gte("userId", 43);
+		filter = gte("userId", 4578544);
 		result = posts.deleteMany(filter);
 		System.out.println(result);
 
